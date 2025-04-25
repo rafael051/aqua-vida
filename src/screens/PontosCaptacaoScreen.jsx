@@ -37,13 +37,13 @@ export default function PontosCaptacaoScreen() {
                     <Text style={styles.texto}>{item.municipio} - {item.uf}</Text>
 
                     <Text style={styles.label}>Instituição:</Text>
-                    <Text style={styles.texto}>{item.nome_da_instiuicao}</Text>
+                    <Text style={styles.texto}>{item.nome_da_instituicao || 'Não informada'}</Text>
 
                     <Text style={styles.label}>Forma de Abastecimento:</Text>
-                    <Text style={styles.texto}>{item.nome_da_forma_de_abastecimento}</Text>
+                    <Text style={styles.texto}>{item.nome_da_forma_de_abastecimento || 'Não informada'}</Text>
 
                     <Text style={styles.label}>Tipo de Captação:</Text>
-                    <Text style={styles.texto}>{item.tipo_de_captacao}</Text>
+                    <Text style={styles.texto}>{item.tipo_de_captacao || 'Não informado'}</Text>
 
                     <Text style={styles.label}>Manancial:</Text>
                     <Text style={styles.texto}>{item.nome_do_manancial_superficial || 'Não informado'}</Text>
@@ -60,7 +60,7 @@ export default function PontosCaptacaoScreen() {
                     <Text style={styles.texto}>{item.outorga === 'S' ? 'Sim' : 'Não'}</Text>
 
                     <Text style={styles.label}>Ano de Referência:</Text>
-                    <Text style={styles.texto}>{item.ano_de_referencia}</Text>
+                    <Text style={styles.texto}>{item.ano_de_referencia || 'Não informado'}</Text>
                 </View>
             ))}
         </ScrollView>

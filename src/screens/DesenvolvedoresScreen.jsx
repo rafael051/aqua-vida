@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import styles from '../styles/ScreensStyle';
 
 export default function DesenvolvedoresScreen() {
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Equipe de Desenvolvimento</Text>
 
             <View style={styles.card}>
@@ -16,6 +16,6 @@ export default function DesenvolvedoresScreen() {
                 <Text style={styles.nome}>Rafael Rodrigues de Almeida</Text>
                 <Text style={styles.funcao}>Desenvolvedor Front-end</Text>
             </View>
-        </View>
+        </ScrollView>
     );
 }

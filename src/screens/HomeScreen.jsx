@@ -10,7 +10,7 @@ export default function HomeScreen({ navigation }) {
 
             <Text style={styles.paragrafo}>
                 O AquaVida é um aplicativo informativo que reúne dados públicos sobre a qualidade da água para consumo humano no Brasil.
-                Navegue pelas seções abaixo e saiba mais sobre os parâmetros, tratamento, abastecimento e muito mais.
+                Navegue pelas seções abaixo e saiba mais sobre os parâmetros, vigilância, abastecimento e captação.
             </Text>
 
             <TouchableOpacity
@@ -18,20 +18,6 @@ export default function HomeScreen({ navigation }) {
                 onPress={() => navigation.navigate('ParametrosControleMensalScreen')}
             >
                 <Text style={styles.buttonText}>Parâmetros Químicos e Bacteriológicos</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('TratamentoScreen')}
-            >
-                <Text style={styles.buttonText}>Tratamento e Infraestrutura</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('PopulacaoScreen')}
-            >
-                <Text style={styles.buttonText}>População Abastecida</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

@@ -4,16 +4,33 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        backgroundColor: '#F1FAEE',
+        backgroundColor: '#F1FAEE', // Branco gelo
         padding: 20,
+        paddingBottom: 40,
     },
 
     titulo: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: 'bold',
-        marginBottom: 20,
-        color: '#006d77',
+        marginBottom: 12,
+        color: '#006d77', // Verde escuro elegante
         textAlign: 'center',
+    },
+
+    subtitulo: {
+        fontSize: 18,
+        color: '#457b9d',
+        textAlign: 'center',
+        marginBottom: 16,
+        fontWeight: '500',
+    },
+
+    paragrafo: {
+        fontSize: 16,
+        color: '#333',
+        textAlign: 'justify',
+        marginBottom: 20,
+        lineHeight: 24,
     },
 
     card: {
@@ -24,20 +41,20 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowOpacity: 0.1,
         shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 4,
+        shadowRadius: 6,
         elevation: 3,
     },
 
     label: {
         fontWeight: 'bold',
         color: '#1d3557',
-        fontSize: 14,
+        fontSize: 15,
         marginTop: 8,
     },
 
     texto: {
         color: '#333',
-        fontSize: 14,
+        fontSize: 15,
         marginBottom: 6,
     },
 
@@ -46,15 +63,22 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 8,
-        paddingHorizontal: 12,
+        paddingHorizontal: 14,
         paddingVertical: 10,
-        marginBottom: 12,
+        fontSize: 16,
+        marginBottom: 16,
+    },
+
+    inputMensagem: {
+        height: 100,
+        textAlignVertical: 'top',
     },
 
     button: {
-        backgroundColor: '#457b9d',
-        padding: 12,
-        borderRadius: 8,
+        backgroundColor: '#457b9d', // Azul bonito
+        paddingVertical: 14,
+        paddingHorizontal: 20,
+        borderRadius: 10,
         alignItems: 'center',
         marginBottom: 15,
     },
@@ -63,20 +87,49 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 16,
+        letterSpacing: 0.5,
     },
 
     erro: {
-        color: '#e63946',
+        color: '#e63946', // vermelho alerta
         textAlign: 'center',
-        marginTop: 10,
         fontSize: 14,
+        marginTop: 10,
     },
 
     carregando: {
         textAlign: 'center',
-        color: '#888',
+        color: '#999',
         fontStyle: 'italic',
-        marginVertical: 10,
+        marginVertical: 12,
+    },
+
+    imagemFormulario: {
+        width: 120,
+        height: 120,
+        alignSelf: 'center',
+        marginBottom: 20,
+    },
+
+    imagemSobre: {
+        width: 120,
+        height: 120,
+        alignSelf: 'center',
+        marginBottom: 20,
+    },
+
+    nome: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#1d3557',
+        textAlign: 'center',
+    },
+
+    funcao: {
+        fontSize: 16,
+        color: '#457b9d',
+        textAlign: 'center',
+        marginTop: 4,
     },
 });
 

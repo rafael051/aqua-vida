@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import styles from '../styles/ScreensStyle';
 import { buscarParametrosControleMensal } from '../services/parametrosControleMensalService';
+import { formatarData, capitalizarTexto } from '../utils/formatadores';
 
 export default function ParametrosControleMensalScreen() {
     const [dados, setDados] = useState([]);

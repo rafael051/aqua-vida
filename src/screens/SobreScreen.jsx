@@ -13,7 +13,7 @@ export default function SobreScreen() {
 
             <Image
                 source={{ uri: 'https://cdn-icons-png.flaticon.com/512/481/481777.png' }}
-                style={{ width: 120, height: 120, alignSelf: 'center', marginBottom: 20 }}
+                style={styles.imagemSobre}
             />
 
             <Text style={styles.paragrafo}>
@@ -29,7 +29,6 @@ export default function SobreScreen() {
                 {"\n"}• Parâmetros químicos e bacteriológicos analisados mensalmente;
                 {"\n"}• Exposição a cianobactérias e toxinas;
                 {"\n"}• Condições de tratamento e infraestrutura;
-                {"\n"}• Quantidade estimada da população abastecida;
                 {"\n"}• Registros de carros-pipa em áreas remotas;
                 {"\n"}• Pontos oficiais de captação de água.
             </Text>

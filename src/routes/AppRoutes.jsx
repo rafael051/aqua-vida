@@ -1,5 +1,3 @@
-// src/routes/AppRoutes.jsx
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -30,42 +28,46 @@ export default function AppRoutes() {
                     options={{ title: 'AquaVida 💧' }}
                 />
                 <Stack.Screen
-                    name="Sobre"
+                    name="SobreScreen"
                     component={SobreScreen}
                     options={{ title: 'Sobre o Projeto' }}
                 />
                 <Stack.Screen
-                    name="Desenvolvedores"
+                    name="DesenvolvedoresScreen"
                     component={DesenvolvedoresScreen}
                     options={{ title: 'Equipe Desenvolvedora' }}
                 />
                 <Stack.Screen
-                    name="Ajuda"
+                    name="AjudaScreen"
                     component={AjudaScreen}
                     options={{ title: 'Ajuda e Suporte' }}
                 />
                 <Stack.Screen
-                    name="Formulario"
+                    name="FormularioScreen"
                     component={FormularioScreen}
                     options={{ title: 'Formulário de Contato' }}
                 />
 
                 {/* 📊 Telas com dados temáticos */}
                 <Stack.Screen
-                    name="Qualidade da Água"
+                    name="ParametrosControleMensalScreen"
                     component={ParametrosControleMensalScreen}
+                    options={{ title: 'Qualidade da Água' }}
                 />
                 <Stack.Screen
-                    name="Cianobactérias e Toxinas"
+                    name="CianobacteriasScreen"
                     component={CianobacteriasScreen}
+                    options={{ title: 'Cianobactérias e Toxinas' }}
                 />
                 <Stack.Screen
-                    name="Abastecimento por Carro-Pipa"
+                    name="CarroPipaScreen"
                     component={CarroPipaScreen}
+                    options={{ title: 'Abastecimento por Carro-Pipa' }}
                 />
                 <Stack.Screen
-                    name="Pontos de Captação"
+                    name="PontosCaptacaoScreen"
                     component={PontosCaptacaoScreen}
+                    options={{ title: 'Pontos de Captação' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

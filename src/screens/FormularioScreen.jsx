@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, Linking, Image, ScrollView } from 'react-native';
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    Alert,
+    Image,
+    ScrollView
+} from 'react-native';
 import styles from '../styles/ScreensStyle';
 
 export default function FormularioScreen() {
@@ -23,7 +31,7 @@ export default function FormularioScreen() {
 
             <Image
                 source={{ uri: 'https://cdn-icons-png.flaticon.com/512/747/747376.png' }}
-                style={{ width: 120, height: 120, alignSelf: 'center', marginBottom: 16 }}
+                style={styles.imagemFormulario}
             />
 
             <TextInput
@@ -37,7 +45,7 @@ export default function FormularioScreen() {
                 placeholder="Digite sua mensagem"
                 value={mensagem}
                 onChangeText={setMensagem}
-                style={[styles.input, { height: 100 }]}
+                style={[styles.input, styles.inputMensagem]}
                 multiline
             />
 
