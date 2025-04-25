@@ -8,18 +8,13 @@ export default function DesenvolvedoresScreen() {
             <Text style={styles.titulo}>Equipe de Desenvolvimento</Text>
 
             <View style={styles.card}>
-                <Text style={styles.nome}>Rafael Rodrigues</Text>
+                <Text style={styles.nome}>Lucas Kenji Miyahira</Text>
+                <Text style={styles.funcao}>Desenvolvedor Mobile</Text>
+            </View>
+
+            <View style={styles.card}>
+                <Text style={styles.nome}>Rafael Rodrigues de Almeida</Text>
                 <Text style={styles.funcao}>Desenvolvedor Front-end</Text>
-            </View>
-
-            <View style={styles.card}>
-                <Text style={styles.nome}>Ana Souza</Text>
-                <Text style={styles.funcao}>Desenvolvedora Mobile</Text>
-            </View>
-
-            <View style={styles.card}>
-                <Text style={styles.nome}>Carlos Lima</Text>
-                <Text style={styles.funcao}>Designer de UI/UX</Text>
             </View>
         </View>
     );

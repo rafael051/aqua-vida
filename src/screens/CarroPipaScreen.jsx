@@ -1,35 +1,58 @@
-import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+// src/screens/CarroPipaScreen.jsx
+import React, { useEffect, useState } from 'react';
+import { ScrollView, View, Text } from 'react-native';
 import styles from '../styles/ScreensStyle';
+import { buscarCadastroCarroPipa } from '../services/carroPipaService';
 
 export default function CarroPipaScreen() {
+    const [dados, setDados] = useState([]);
+    const [carregando, setCarregando] = useState(true);
+    const [erro, setErro] = useState(null);
+
+    useEffect(() => {
+        async function carregarDados() {
+            try {
+                const resposta = await buscarCadastroCarroPipa(100, 0);
+                setDados(resposta);
+            } catch (err) {
+                setErro('Erro ao carregar os dados de carros-pipa.');
+                console.error(err);
+            } finally {
+                setCarregando(false);
+            }
+        }
+
+        carregarDados();
+    }, []);
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Abastecimento por Carro-Pipa</Text>
 
-            <Text style={styles.paragrafo}>
-                Em áreas com dificuldade de acesso à rede pública de abastecimento de água, como comunidades rurais ou em situação de emergência, o fornecimento é realizado por carros-pipa.
-            </Text>
+            {carregando && <Text style={styles.carregando}>Carregando...</Text>}
+            {erro && <Text style={styles.erro}>{erro}</Text>}
 
-            <Text style={styles.topico}>• Finalidade:</Text>
-            <Text style={styles.paragrafo}>
-                Atender populações vulneráveis que não possuem acesso contínuo à água potável.
-            </Text>
+            {dados.map((item, index) => (
+                <View key={index} style={styles.card}>
+                    <Text style={styles.label}>Instituição:</Text>
+                    <Text style={styles.texto}>{item.nome_da_instituicao}</Text>
 
-            <Text style={styles.topico}>• Fiscalização:</Text>
-            <Text style={styles.paragrafo}>
-                Os carros-pipa devem ser autorizados por órgãos de saúde pública, e sua origem e qualidade da água são controladas.
-            </Text>
+                    <Text style={styles.label}>Placa:</Text>
+                    <Text style={styles.texto}>{item.placa}</Text>
 
-            <Text style={styles.topico}>• Registro:</Text>
-            <Text style={styles.paragrafo}>
-                O SISAGUA mantém registros de carros-pipa, suas rotas, responsáveis e população atendida.
-            </Text>
+                    <Text style={styles.label}>Município:</Text>
+                    <Text style={styles.texto}>{item.municipio} - {item.uf}</Text>
 
-            <Text style={styles.topico}>• Importância:</Text>
-            <Text style={styles.paragrafo}>
-                Garante o acesso emergencial à água, especialmente em períodos de seca ou colapso hídrico.
-            </Text>
+                    <Text style={styles.label}>Data Início:</Text>
+                    <Text style={styles.texto}>{item.data_inicio_de_autorizacao}</Text>
+
+                    <Text style={styles.label}>Data Fim:</Text>
+                    <Text style={styles.texto}>{item.data_fim_da_autorizacao}</Text>
+
+                    <Text style={styles.label}>População Atendida (estimativa):</Text>
+                    <Text style={styles.texto}>{item.n_de_pessoas_abastecidas_estimativa}</Text>
+                </View>
+            ))}
         </ScrollView>
     );
 }

@@ -8,9 +8,14 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.titulo}>AquaVida 💧</Text>
             <Text style={styles.subtitulo}>Monitoramento da Qualidade da Água</Text>
 
+            <Text style={styles.paragrafo}>
+                O AquaVida é um aplicativo informativo que reúne dados públicos sobre a qualidade da água para consumo humano no Brasil.
+                Navegue pelas seções abaixo e saiba mais sobre os parâmetros, tratamento, abastecimento e muito mais.
+            </Text>
+
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('QualidadeAguaScreen')}
+                onPress={() => navigation.navigate('ParametrosControleMensalScreen')}
             >
                 <Text style={styles.buttonText}>Parâmetros Químicos e Bacteriológicos</Text>
             </TouchableOpacity>
@@ -41,6 +46,20 @@ export default function HomeScreen({ navigation }) {
                 onPress={() => navigation.navigate('CarroPipaScreen')}
             >
                 <Text style={styles.buttonText}>Abastecimento por Carro-Pipa</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('PontosCaptacaoScreen')}
+            >
+                <Text style={styles.buttonText}>Pontos de Captação</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('SobreScreen')}
+            >
+                <Text style={styles.buttonText}>Sobre o Projeto</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
