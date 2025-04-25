@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
 import styles from '../styles/ScreensStyle';
 import { buscarCadastroCarroPipa } from '../services/carroPipaService';
 import { formatarData } from '../utils/formatadores';
@@ -28,6 +28,18 @@ export default function CarroPipaScreen() {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Abastecimento por Carro-Pipa</Text>
+
+            {/* 🌟 Imagem ilustrativa 1 - Caminhão Pipa */}
+            <Image
+                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/3178/3178220.png' }}
+                style={{ width: 100, height: 100, alignSelf: 'center', marginBottom: 16 }}
+            />
+
+            {/* 🌟 Imagem ilustrativa 2 - Ícone de água */}
+            <Image
+                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/728/728093.png' }}
+                style={{ width: 90, height: 90, alignSelf: 'center', marginBottom: 16 }}
+            />
 
             {carregando && <Text style={styles.carregando}>Carregando...</Text>}
             {erro && <Text style={styles.erro}>{erro}</Text>}

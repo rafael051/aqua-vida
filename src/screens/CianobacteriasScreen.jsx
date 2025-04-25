@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
 import styles from '../styles/ScreensStyle';
 import { buscarVigilanciaCianobacterias } from '../services/cianobacteriasService';
-import { formatarData } from '../utils/formatadores'; // ✅ Importação da função
+import { formatarData } from '../utils/formatadores';
+
+// ✅ Imagens locais
+import bacteria from '../assets/bacteria.png';
+import virus from '../assets/virus.png';
 
 export default function CianobacteriasScreen() {
     const [dados, setDados] = useState([]);
@@ -28,6 +32,18 @@ export default function CianobacteriasScreen() {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Exposição a Cianobactérias e Toxinas</Text>
+
+            {/* 🦠 Imagem 1 - Bactéria ilustrativa */}
+            <Image
+                source={bacteria}
+                style={{ width: 90, height: 90, alignSelf: 'center', marginBottom: 8 }}
+            />
+
+            {/* ⚠️ Imagem 2 - Representação de vírus ou toxina */}
+            <Image
+                source={virus}
+                style={{ width: 90, height: 90, alignSelf: 'center', marginBottom: 16 }}
+            />
 
             {carregando && <Text style={styles.carregando}>Carregando...</Text>}
             {erro && <Text style={styles.erro}>{erro}</Text>}

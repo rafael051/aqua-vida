@@ -4,16 +4,23 @@ import styles from '../styles/ScreensStyle';
 
 export default function SobreScreen() {
     const abrirSiteSISAGUA = () => {
-        Linking.openURL('https://www.gov.br/saude/pt-br/composicao/svsa/vigilancia-da-qualidade-da-agua');
+        Linking.openURL('https://www.gov.br/ana/pt-br/assuntos/monitoramento-e-eventos-criticos/qualidade-da-agua');
     };
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Sobre o Projeto</Text>
 
+            {/* 💧 Ícone ilustrativo da água */}
             <Image
                 source={{ uri: 'https://cdn-icons-png.flaticon.com/512/481/481777.png' }}
                 style={styles.imagemSobre}
+            />
+
+            {/* 💦 Imagem complementar: sistema de água */}
+            <Image
+                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/2472/2472786.png' }} // estação de tratamento
+                style={{ width: 90, height: 90, alignSelf: 'center', marginBottom: 16 }}
             />
 
             <Text style={styles.paragrafo}>
@@ -37,6 +44,12 @@ export default function SobreScreen() {
                 Essa iniciativa tem como foco uma <Text style={{ fontWeight: 'bold' }}>questão social crítica</Text>: garantir que todos tenham o direito de acesso à informação e à água segura.
             </Text>
 
+            {/* 🌍 Imagem adicional: sustentabilidade */}
+            <Image
+                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1995/1995476.png' }} // ODS / água sustentável
+                style={{ width: 90, height: 90, alignSelf: 'center', marginBottom: 16 }}
+            />
+
             <Text style={styles.paragrafo}>
                 Utilizando dados reais e atualizados, o AquaVida contribui com a fiscalização, o conhecimento popular e o apoio a políticas públicas que envolvem saneamento, saúde ambiental e justiça hídrica.
             </Text>
@@ -46,7 +59,7 @@ export default function SobreScreen() {
             </Text>
 
             <TouchableOpacity style={styles.button} onPress={abrirSiteSISAGUA}>
-                <Text style={styles.buttonText}>Acessar Site Oficial do SISAGUA</Text>
+                <Text style={styles.buttonText}>Acessar Site Oficial da Agência Nacional de Águas e Saneamento Básico (ANA)</Text>
             </TouchableOpacity>
         </ScrollView>
     );
